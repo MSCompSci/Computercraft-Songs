@@ -1,5 +1,12 @@
 -- The Song you want to play
 local songname = "songs/bell"
+if arg[1] then
+  if not fs.exists(arg[1]) then
+    print(arg[1].." doesn't exist")
+    exit()
+  end
+  songname = arg[1]
+end
 require songname
 
 local modem = peripheral.find("modem")
