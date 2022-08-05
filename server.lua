@@ -1,7 +1,7 @@
 -- The Song you want to play
 local songname = "songs/bell"
 if arg[1] then
-  if not fs.exists(arg[1]) then
+  if not fs.exists(arg[1]..".lua") then
     print(arg[1].." doesn't exist")
     exit()
   end
@@ -10,11 +10,10 @@ end
 require(songname)
 
 local modem = peripheral.find("modem")
-print("Server Started")
+print("Server Started with song: "..songname)
 
 while true do
   -- Wait for a message to arrive...
-  -- local event, modemSide, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
   os.pullEvent("redstone")
   if rs.getInput("right") then
       modem.transmit(89, 1, song)
