@@ -8,8 +8,23 @@ print("Client Started")
 
 
 while true do
+  ::main_loop_start::
   -- Wait for a message to arrive...
   local event, modemSide, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
+  -- Special Case: Execute shell commands given in message[2]
+  if message[1] == "$shell" then
+    print("Executing Shell Commands")
+    sleep(0.25)
+    -- Run each command in the message
+    for i,v in ipairs(message[2]) do
+      shell.run(v)
+    end
+  -- Restart the while loop
+  goto main_loop_start
+  end
+    
+    
+  -- If nothing special is sent, just play the song received
   print("Playing "..message[1].." at tempo multiplier"..message[3])
   
   -- Play the encoded message
