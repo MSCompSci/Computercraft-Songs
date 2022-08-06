@@ -10,7 +10,7 @@ print("Client Started")
 while true do
   -- Wait for a message to arrive...
   local event, modemSide, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
-  print("Playing "..message[1],"at tempo multiplier"..message[3])
+  print("Playing "..message[1].." at tempo multiplier"..message[3])
   
   -- Play the encoded message
   for i,v in ipairs(message[2]) do
