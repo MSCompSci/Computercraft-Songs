@@ -11,6 +11,6 @@ track[6] = {"banjo", 3, 9, .125}
 track[7] = {"banjo", 3, 7, .125}
 track[8] = {"banjo", 3, 5, .25}
 track[9] = {"banjo", 3, 5, .25}
-track[7] = {"banjo", 3, 7, .25}
+track[10] = {"banjo", 3, 7, .25}
 
 song = {"Nyan Cat", track}
