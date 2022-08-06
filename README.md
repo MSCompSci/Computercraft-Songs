@@ -2,7 +2,7 @@
 Song system for Minecraft Computercraft Speakers
 ___
 
-This is a project to allow the creation of custom songs using the [Computercraft: Tweaked](https://computercraft.cc/) Minecraft mod.
+This is a project to allow the creation of custom songs using the [Computercraft: Tweaked](https://tweaked.cc/) Minecraft mod.
 
 The songs are stored on a central server and sent to client computers to play on remote speakers.
 
