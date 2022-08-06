@@ -15,10 +15,14 @@ while true do
   -- Play the encoded message
   for i,v in ipairs(message[2]) do
 
-    -- find corresponding mc note number using decoder module
+    -- find corresponding mc note number using decoder module if the track uses note notation
     -- v[3] is string version of note from song file
     -- new from McDonalds it's the mcNote!
-    local mcNote = d.findNote(v[3])
+    if v[4] then
+      local mcNote = d.findNote(v[3])
+    else
+      local mcNote = v[3]
+    end
 
     --play song note
     speaker.playNote(v[1], v[2], mcNote)
