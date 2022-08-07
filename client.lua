@@ -27,10 +27,11 @@ while true do
       -- find corresponding mc note number using decoder module if the track uses note notation
       -- v[3] is string version of note from song file
       -- new from McDonalds it's the mcNote!
-      if v[4] then
-        local mcNote = d.findNote(v[3])
+      local mcNote
+      if v[4] == true then
+        mcNote = d.findNote(v[3])
       else
-        local mcNote = v[3]
+        mcNote = v[3]
       end
 
       --play song note
@@ -41,4 +42,3 @@ while true do
     end
   end
 end
-  
