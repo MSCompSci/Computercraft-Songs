@@ -16,7 +16,7 @@ while true do
   -- Wait for a message to arrive...
   os.pullEvent("redstone")
   if rs.getInput("right") then
-      modem.transmit(89, 1, song)
+      modem.transmit(89, 1, message)
       print("Sending "..songname)
       sleep(1)
   end

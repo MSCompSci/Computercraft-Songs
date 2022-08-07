@@ -17,7 +17,7 @@ while true do
   print("Press D to send command")
   local event, key, is_held = os.pullEvent("key")
   if key == keys.d then
-      modem.transmit(89, 1, song)
+      modem.transmit(89, 1, message)
       print("Sending "..songname)
       sleep(1)
   end
