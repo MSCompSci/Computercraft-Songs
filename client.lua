@@ -12,15 +12,14 @@ while true do
   local event, modemSide, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
   -- Special Case: Execute shell commands given in message[2]
   if message[1] == "$shell" then
-    print("Executing Shell Commands")
-    sleep(0.25)
+    print("[!] Executing Shell Commands")
     -- Run each command in the message
     for i,v in ipairs(message[2]) do
       shell.run(v)
     end
   else
     -- If nothing special is sent, just play the song received
-    print("Playing "..message[1].." at tempo multiplier"..message[3])
+    print("[!] Playing "..message[1].." at Tempo Multiplier "..message[3])
 
     -- Play the encoded message
     for i,v in ipairs(message[2]) do
