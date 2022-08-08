@@ -2,12 +2,8 @@ from mido import MidiFile
 import music21
 import os
 
-#----------TODO----------
-# figure out how to assign minecraft pitch number to notes in file
-
 #----SONGS----
 #songs in other keys
-# 0.4875 timing error may be due to online midi website
 song='OnlineMidi.mid' #song in d minor
 #song='CMajScale.mid'
 
@@ -21,7 +17,7 @@ song='OnlineMidi.mid' #song in d minor
 songName = song[:-4] # name of song
 
 # Use notes instead of MC Note numbers?
-# True yes, False no
+# True yes, False no: changes to lowercase on export for lua
 notesNotation = True
 
 # Choose instrument
@@ -60,6 +56,7 @@ noteVals = {"C":(0, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120),
             
             "B":(11, 23, 35, 47, 59, 71, 83, 95, 107, 119)
            }
+
 
 #-----FUNCTIONS-----
 def parseMidiTime():
@@ -191,7 +188,7 @@ def formatSongFile(notes):
   for x in range(len(notes)):
     formSong += "track[%i] = {\"%s\", %d, \"%s\", %s}\n"%(x+1, inst, volume, str(notes[x][0]), str(notes[x][1]))
   formSong += "\nmessage = {\"%s\", track, 1, %s}"%(songName,           
-              str(notesNotation))
+              str(notesNotation).lower())
   return(formSong)
 
 def main():
