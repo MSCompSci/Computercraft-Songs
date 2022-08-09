@@ -35,7 +35,7 @@ while true do
       end
 
       --play song note
-      speaker.playNote(v[1], v[2], mcNote)
+      speaker.playNote(v[1], v[2], tonumber(mcNote))
 
       --pause after note controlled by tempo multiplier
       sleep(v[4] * message[3])
