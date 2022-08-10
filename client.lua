@@ -28,7 +28,7 @@ while true do
       -- v[3] is string version of note from song file
       -- new from McDonalds it's the mcNote!
       local mcNote
-      if v[4] == true then
+      if message[4] == true then
         mcNote = d.findNote(v[3])
       else
         mcNote = v[3]
