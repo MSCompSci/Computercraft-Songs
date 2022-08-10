@@ -1,25 +1,34 @@
+-- Save the selected music group to play with
+-- If no group is given, ignore the group parameter in the message
+local group
+if #arg ~= 1 then
+  group = "any"
+else
+  group = arg[1]
+end
+
 -- require decoder script
 local d = require "decoder"
-
 local modem = peripheral.find("modem")
 local speaker = peripheral.find("speaker")
 modem.open(89)
-print("Client Started")
-
+--------------------
+print(os.date("%T").."> Client Started in group "..group)
+--------------------
 
 while true do
   -- Wait for a message to arrive...
   local event, modemSide, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
   -- Special Case: Execute shell commands given in message[2]
-  if message[1] == "$shell" then
+  if (message[1] == "$shell") and ((group == "any") or (group == message["group"])) then
     print("[!] Executing Shell Commands")
     -- Run each command in the message
     for i,v in ipairs(message[2]) do
       shell.run(v)
     end
-  else
+  elseif (group == "any") or (group == message["group"]) then
     -- If nothing special is sent, just play the song received
-    print("[!] Playing "..message[1].." at Tempo Multiplier "..message[3])
+    print(os.date("%T").."> Playing "..message[1].." at TM "..message[3])
 
     -- Play the encoded message
     for i,v in ipairs(message[2]) do
