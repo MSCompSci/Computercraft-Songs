@@ -23,7 +23,7 @@ Each song file is made of several parts.
     - a tempo multiplier that can be used to manually adjust the speed of playback
     - and *true* if the song file uses letters like **"F#1"** or *false* if the Minecraft note block corresponding numbers 0-24 are used.
     - This is written in the format:
-        - **message = {song Name, track, 1 (this is default for the tempo muliplier), false}
+        - **message = {song Name, track, 1 (this is default for the tempo muliplier), false}**
 
 ### Server script
 ### Client script
