@@ -41,6 +41,7 @@ Currently the script is offered with a command line interface only, however we p
 ### Installing the MIDI converter
 - The MIDI converter makes use of the python library [music21](http://web.mit.edu/music21/), which must be installed in the python environment where the converter is run.
 - Installation instructions for music21 on all systems, as well as python on windows can be found [here.](http://web.mit.edu/music21/doc/usersGuide/usersGuide_01_installing.html) 
+- The MIDI converter can also be run online if you create a fork of the [Repl live environment repository.](https://replit.com/@mscompsci/MIDI-Test#main.py) You can then upload a MIDI file to convert to the main directory and run the program.
 
 
 
@@ -63,12 +64,16 @@ ___
 
 * [Computercraft: Tweaked Wiki](https://tweaked.cc/)
 
-* [Computercraft Speaker Information](https://tweaked.cc/peripheral/speaker.html)
+* [Computercraft: Speaker Information](https://tweaked.cc/peripheral/speaker.html)
 
-* [Speaker/Note Block Note Explanation](https://minecraft.fandom.com/wiki/Note_Block#Notes)
+* [Minecraft Wiki: Note Block Note Explanation](https://minecraft.fandom.com/wiki/Note_Block#Notes)
 
-* [Free Online Virtual Piano](https://www.musicca.com/piano)
+* [musicca: Free Online Virtual Piano](https://www.musicca.com/piano)
 
-* [How to Read Music for Beginners](https://www.musicnotes.com/now/tips/how-to-read-sheet-music/)
+* [musicnotes.com: How to Read Music for Beginners](https://www.musicnotes.com/now/tips/how-to-read-sheet-music/)
 
-* [musescore music notation software](https://musescore.org/en)
+* [MuseScore3: music notation software](https://musescore.org/en)
+
+* [wikiHow: How to Use MuseScore](https://www.wikihow.com/Use-MuseScore)
+
+* [Cakewalk DAW](https://www.bandlab.com/products/cakewalk)
