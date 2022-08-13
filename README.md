@@ -28,6 +28,7 @@ Each song file is made of several parts.
 ### Server script
 ### Client script
 ### Server and client installation
+### Adding and playing songs
 ### Updating clients
 
 ## The MIDI converter
