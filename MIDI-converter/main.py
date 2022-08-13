@@ -25,7 +25,7 @@ def configSong(): # set song file name
     print('Select MIDI file to convert\nMust be in main.py directory to be selectable')
     for y in range(len(midis)):
       print("[",y,"]","  ",midis[y],sep="")
-    print("[",len(midis)+1,"]","  Exit program",sep="")
+    print("[",len(midis),"]","  Exit program",sep="")
     file = input('Selection: ')
     print("\n")
     if file.isnumeric(): # select only midi files
@@ -35,14 +35,14 @@ def configSong(): # set song file name
         selected = True
         print("\n")
         print("File selected:",song,"\n")
-      elif file == (len(midis) + 1):
+      elif file == (len(midis)):
         sys.exit()
       else:
         print("Invalid selection\n")
   return True
 
 def useConf(): #check if user wants to use configuration file
-  global noteNotation
+  global notesNotation
   global inst
   global volume
   if os.path.isfile("./config.txt"): #check if config exists
@@ -58,10 +58,14 @@ def useConf(): #check if user wants to use configuration file
       for line in f.readlines():
         fln = line.rstrip().split(',')
       #apply config to global variables
-      noteNotation = fln[0]
+      notesNotation = fln[0]
+      if "True" in notesNotation: # convert string from file to bool 
+        notesNotation = True
+      else:
+        notesNotation = False
       inst = fln[1]
       volume = fln[2]
-      #print(noteNotation, inst, volume)
+      
       return True
     else: # if no
       print("\n")
@@ -320,6 +324,24 @@ def addOct(s,minNote,maxNote): # Add MC Octave number
           else:
             n[0] += "2"
   return s
+
+def convertMC(s): # convert parsedSong into Minecraft numbers
+  print("Converting to Minecraft note block number system\n")
+  # Letter versions of note names with Minecraft octaves
+  # index of each letter corresponds with Minecraft order
+  noteNames = (("F#1", "Gb1"),("G1"),("G#1", "Ab1"),("A1"),
+              ("A#1", "Bb1"),("B1"),("C1"),("C#1", "Db1"),
+              ("D1"),("D#1", "Eb1"),("E1"),("F1"),("F#2", "Gb2"),
+              ("G2"),("G#2", "Ab2"),("A2"),("A#2", "Bb2"),("B2"),
+              ("C2"),("C#2", "Db2"),("D2"),("D#2", "Eb2"),("E2"),
+              ("F2"),("F#3", "Gb3"))
+  for x in noteNames:
+    for m in s: # iterate parsedSong
+      for n in m:
+        if str(n[0]) in x: # if note name is found in noteNames[x]
+          # make note = to index of x + 1 (adding one for lua indexing)
+          n[0] = (noteNames.index(x) + 1) 
+  return s
   
 def assignSpeaker(s): # assign speaker channel number
   for m in s: # iterate blocks of notes with same offset
@@ -424,6 +446,7 @@ def main():
   global song
   global midiList
   global score
+  global notesNotation
   print("-"*15 + "CONFIGURATION" + "-"*15 + "\n")
   config() # run settings config
   print("-"*15 + "MIDI-CONVERSION" + "-"*15 + "\n")
@@ -438,6 +461,8 @@ def main():
     print("Song within range\n")
     parsedSong = addOct(parsedSong,minNote,maxNote)
     print("Minecraft octave numbers added\n")
+    if notesNotation == False:
+      parsedSong = convertMC(parsedSong)
     parsedSong = assignSpeaker(parsedSong)
     print("Speakers assigned\n")
     parsedSong = addTiming(parsedSong)
