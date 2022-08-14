@@ -69,6 +69,8 @@ ___
 
 * [Minecraft Wiki: Note Block Note Explanation](https://minecraft.fandom.com/wiki/Note_Block#Notes)
 
+* [Blair School of Music: MIDI note value reference](https://computermusicresource.com/midikeys.html)
+
 * [musicca: Free Online Virtual Piano](https://www.musicca.com/piano)
 
 * [musicnotes.com: How to Read Music for Beginners](https://www.musicnotes.com/now/tips/how-to-read-sheet-music/)
