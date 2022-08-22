@@ -30,11 +30,11 @@ while true do
     -- If nothing special is sent, just play the song received
     print(os.date("%T").."> Playing "..message[1].." at TM "..message[3])
     
-    speaker = 1 -- set speaker value for polyphonic songs, 1 is default
+    sp = 1 -- set speaker value for polyphonic songs, 1 is default
 
     -- Play the encoded message
     for i,v in ipairs(message[2]) do
-        if v[5] == speaker then
+        if v[5] == sp then
 
         -- find corresponding mc note number using decoder module if the track uses note notation
         -- v[3] is string version of note from song file
