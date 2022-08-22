@@ -33,8 +33,7 @@ function M.findNote (n)
   for key, val in ipairs(noteArray) do
     for l, no in ipairs(val) do
       --print(no)
-      if (no==note)
-        then
+      if (no==note) then
         return key - 1
       end
     end
