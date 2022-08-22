@@ -1,3 +1,50 @@
-logo {
+*{
+    margin:0;
+}
+nav{
+    width:30%;
+    max-width: 450px;
+    height: 100%;
+    border: solid black 1px;
+
+}
+.logo-block{
+    display: flex;
+    align-items: center;
+    border-bottom: darkgray solid 1px;
+    text-decoration: none;
+    color: black;
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
     
+
+}
+.logo-block h1{
+    width: 60%;
+    font-size: 2vw;
+    font-family: monospace;
+    margin: 0 auto 0 auto;
+    
+}
+
+.logo {
+    width:25%;
+    height: auto;  
+}
+ul{
+    list-style-type: none;
+    padding-left:0;
+}
+.nav-link a{
+    text-decoration: none;
+    color:black;
+    font-family: monospace;
+    font-size: 1.3vw;
+    padding-left: 2vw;
+}
+
+.nav-link{
+    padding:10px 0 10px 10px;
+    border-bottom: solid darkgray 1px;
 }
