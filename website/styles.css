@@ -73,3 +73,21 @@ main{
     height:325px;
     background-color: grey;
 }
+
+section{
+    width:70%;
+    margin-right: auto;
+    margin-left: 6.5vw;
+}
+
+section h2{
+    font-family: monospace;
+    font-weight: normal;
+    font-size: 1.8rem;
+    padding: 20px 0;
+}
+
+section p{
+    font-size: 1.2rem;
+    line-height: 150%;
+}
