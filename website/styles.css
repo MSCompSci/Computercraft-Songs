@@ -101,11 +101,23 @@ p {
 }
 .block:nth-of-type(4) {
     background-color: rgb(90, 0, 27);
-    height: 600px;
+    height: 800px;
+
+    
 }
-.block:nth-of-type(4) .download-button {
-    background-color: white;
-    border-color: whitesmoke;
+.block:nth-of-type(4) .row {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: space-between;
+
+}
+.row .download-button{
+    width: 70%;
+    background-color: white;    
+    border: solid;
+    
+
 }
 .block:nth-of-type(4) h2 {
     color: whitesmoke;
@@ -114,7 +126,7 @@ p {
 
 .block:nth-of-type(5) {
     background-color: white;
-    height: 600px;
+
 }
 
 section{
